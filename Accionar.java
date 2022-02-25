@@ -4,17 +4,152 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
 
 public class Accionar extends Diseño{
 	
 	private int X,Y;
+	private JButton[] arreglo= null;
+	private boolean turno;
 	
    public Accionar() {
 	   
+	   this.arreglo= getBotones();
 	   ventanaCerrar();
 	   moverVentana();
 	   moverVentana2();
+	   presionarBoton();
    }	
+   
+   public void presionarBoton() {
+	   
+	   ActionListener presionar= new ActionListener() {	   
+		   @Override  
+		   public void actionPerformed(ActionEvent e) {
+		     turno= true; 
+	    	 for(int i=0; i< arreglo.length; i++) {
+		    	 if(e.getSource() == arreglo[13]) {	   
+		    	   if(turno) {
+		    	     if(getRectangulo().getText() == ""){ 
+		    	       getRectangulo().setText("9");
+		    	       }else{
+		    	    	  getRectangulo().setText(getRectangulo().getText()+"9");
+		    	    	    turno=false;
+		    	            }
+		    	            }
+		                    }
+		    	              if(e.getSource() == arreglo[12]) {	   
+			    	            if(turno) {
+			    	              if(getRectangulo().getText() == ""){ 
+			    	                getRectangulo().setText("8");
+			    	                }else{
+			    	    	           getRectangulo().setText(getRectangulo().getText()+"8");
+			    	    	             turno=false;
+			    	                     }
+			    	                     }
+			                             }
+		    	                           if(e.getSource() == arreglo[11]) {	   
+		    			    	             if(turno) {
+		    			    	               if(getRectangulo().getText() == ""){ 
+		    			    	                 getRectangulo().setText("7");
+		    			    	                 }else{
+		    			    	    	            getRectangulo().setText(getRectangulo().getText()+"7");
+		    			    	    	              turno=false;
+		    			    	                      }
+		    			    	                      }
+		    			                              }
+		    	                                        if(e.getSource() == arreglo[9]) {	   
+		    	            		    	              if(turno) {
+		    	            		    	                if(getRectangulo().getText() == ""){ 
+		    	            		    	                  getRectangulo().setText("6");
+		    	            		    	                  }else{
+		    	            		    	    	             getRectangulo().setText(getRectangulo().getText()+"6");
+		    	            		    	    	               turno=false;
+		    	            		    	                       }
+		    	            		    	                       }
+		    	            		                               }
+		    	                                                     if(e.getSource() == arreglo[8]) {	   
+		    	                         		    	               if(turno) {
+		    	                         		    	                 if(getRectangulo().getText() == ""){ 
+		    	                         		    	                   getRectangulo().setText("5");
+		    	                         		    	                   }else{
+		    	                         		    	    	              getRectangulo().setText(getRectangulo().getText()+"5");
+		    	                         		    	    	                turno=false;
+		    	                         		    	                        }
+		    	                         		    	                        }
+		    	                         		                                }
+		    	                                                                  if(e.getSource() == arreglo[7]) {	   
+		    	                                      		    	                if(turno) {
+		    	                                      		    	                  if(getRectangulo().getText() == ""){ 
+		    	                                      		    	                    getRectangulo().setText("4");
+		    	                                      		    	                    }else{
+		    	                                      		    	    	              getRectangulo().setText(getRectangulo().getText()+"4");
+		    	                                      		    	    	                turno=false;
+		    	                                      		    	                        }
+		    	                                      		    	                        }
+		    	                                      		                                }
+		    	                                                                          if(e.getSource() == arreglo[5]) {	   
+		    	                                                   		    	        if(turno) {
+		    	                                                   		    	      if(getRectangulo().getText() == ""){ 
+		    	                                                   		    	    getRectangulo().setText("3");
+		    	                                                   		    	  }else{
+		    	                                                   		    	 getRectangulo().setText(getRectangulo().getText()+"3");
+		    	                                                   		       turno=false;
+		    	                                                   		       }
+		    	                                                   		       }
+		    	                                                   		       }
+		    	                                                             if(e.getSource() == arreglo[4]) {	   
+		    	                                                           if(turno) {
+		    	                                                         if(getRectangulo().getText() == ""){ 
+		    	                                                       getRectangulo().setText("2");
+		    	                                                     }else{
+		    	                                                   getRectangulo().setText(getRectangulo().getText()+"2");
+		    	                                                 turno=false;
+		    	                                                 }
+		    	                        		    	         }
+		    	                           	                     }
+		    	                                               if(e.getSource() == arreglo[3]) {	   
+		    	                                             if(turno) {
+		    	                          		    	   if(getRectangulo().getText() == ""){ 
+		    	                                         getRectangulo().setText("1");
+		    	                                       }else{
+		    	                                     getRectangulo().setText(getRectangulo().getText()+"1");
+		    	                                   turno=false;
+		    	                                   }
+		    	                                   }
+		    	                                   }
+		    	                                 if(e.getSource() == arreglo[1]) {	   
+		    	                               if(turno) {
+		    	                             if(getRectangulo().getText() == ""){ 
+		    	                           getRectangulo().setText("0");
+		    	                         }else{
+		    	                       getRectangulo().setText(getRectangulo().getText()+"0");
+		    	                	 turno=false;
+		    	                     }
+		                             }
+		   		                     }
+		    	                   if(e.getSource() == arreglo[0]) {	   
+		    	      	    	 if(turno) {
+		    	               if(getRectangulo().getText() == ""){ 
+		    	             getRectangulo().setText(",");
+		    	           }else{
+		    	         getRectangulo().setText(getRectangulo().getText()+",");
+		    	       turno=false;
+		    	       }
+		    	       }
+		    	       }
+		    	     if(e.getSource() == arreglo[10]) {	   
+	    	       getRectangulo().setText("");	    	     
+		    	   }         		    	 
+	    	       }
+	               }
+	             };
+	   for(int i=0; i< arreglo.length; i++) {
+	   arreglo[i].addActionListener(presionar);
+	   }
+   }
    
    public void ventanaCerrar() {
 	   

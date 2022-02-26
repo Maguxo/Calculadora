@@ -12,10 +12,11 @@ public class Accionar extends Diseño{
 	
 	private int X,Y;
 	private JButton[] arreglo= null;
-	private boolean turno;
-	private String  capNumero = "";
-	private Double  mosNumero;
+	private boolean turno, operacion;
+	private String  capNumero = "", operaciones="";
+	private Double  mosNumero ;
 	private Double  resultado;
+	
 	
    public Accionar() {
 	   
@@ -32,6 +33,7 @@ public class Accionar extends Diseño{
 		   @Override  
 		   public void actionPerformed(ActionEvent e) {
 		     turno= true; 
+		     operacion= true;
 	    	 for(int i=0; i< arreglo.length; i++) {
 		    	 if(e.getSource() == arreglo[13]) {	   
 		    	   if(turno) {
@@ -39,10 +41,10 @@ public class Accionar extends Diseño{
 		    	         capNumero = "9";
 		    	       }else{
 		    	    	  capNumero += "9";
-		    	    	    turno=false;
-		    	            }
+		    	    	  turno= false;     
+		    	       }
 		    	              getRectangulo().setText(capNumero);
-		    	            }
+		    	             }
 		                    }
 		    	              if(e.getSource() == arreglo[12]) {	   
 			    	            if(turno) {
@@ -156,18 +158,17 @@ public class Accionar extends Diseño{
 		    	                	   }
 		    	       }
 		    	     if(e.getSource() == arreglo[10]) {	  
-		    	    	 if(turno) {
-	    	       getRectangulo().setText("");
-	    	       getRectangulo2().setText("");
-                      		    	   
-		    	    	 }turno= false;
-		    	    	 turno= false;
+		    	          getRectangulo().setText("");
+	    	              getRectangulo2().setText("");
+	    	              capNumero="";
+	    	              turno= false;
 		    	     }
 		    	     if(e.getSource() == arreglo[17]) {
 		    	    	 if(turno) {
 		    	    		 mosNumero = Double.parseDouble(capNumero);
 		    	    		 getRectangulo2().setText(mosNumero + "/");
 		    	    		 capNumero= "";
+		    	    		 operaciones="Dividir";
 		    	    		 turno= false;
 		    	    	 }
 		    	     }
@@ -176,6 +177,7 @@ public class Accionar extends Diseño{
 		    	    		 mosNumero = Double.parseDouble(capNumero);
 		    	    		 getRectangulo2().setText(mosNumero + "X");
 		    	    		 capNumero= "";
+		    	    		 operaciones= "Multiplicar";
 		    	    		 turno= false;
 		    	    	 }
 		    	     }
@@ -184,6 +186,7 @@ public class Accionar extends Diseño{
 		    	    		 mosNumero = Double.parseDouble(capNumero);
 		    	    		 getRectangulo2().setText(mosNumero + "+");
 		    	    		 capNumero= "";
+		    	    		 operaciones="Sumar";
 		    	    		 turno= false;
 		    	    	 }
 		    	     }
@@ -192,20 +195,33 @@ public class Accionar extends Diseño{
 		    	    		 mosNumero = Double.parseDouble(capNumero);
 		    	    		 getRectangulo2().setText(mosNumero + "-");
 		    	    		 capNumero= "";
+		    	    		 operaciones="Restar";
 		    	    		 turno= false;
 		    	    	 }
 		    	     }
 		    	     if(e.getSource() == arreglo[2]) {
 		    	    	 double mosNumero2;
-		    	    	 if(turno) {
-		    	    	 if(arreglo[17].getText()== "/") {
-		    	    	  		 mosNumero2 = Double.parseDouble(capNumero); 
+		    	    	 if(operaciones.equals("Dividir")) {	
+		    	    		 mosNumero2 = Double.parseDouble(capNumero); 
 		    	    	  		 resultado = (mosNumero / mosNumero2);
 		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
-		    	    	  		 turno= false;
-		    	    	 }
-		    	    	 }        
-		    	    	 }
+		    	                   
+		    	    	 }else  if(operaciones.equals("Multiplicar")) {	 	 
+		    	    			 mosNumero2 = Double.parseDouble(capNumero); 
+		    	    	  		 resultado = (mosNumero * mosNumero2);
+		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
+		    	    		 }else  if(operaciones.equals("Sumar")) {	 	 
+		    	    			 mosNumero2 = Double.parseDouble(capNumero); 
+		    	    	  		 resultado = (mosNumero + mosNumero2);
+		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
+		    	    		 }else  if(operaciones.equals("Restar")) {	 	 
+		    	    			 mosNumero2 = Double.parseDouble(capNumero); 
+		    	    	  		 resultado = (mosNumero - mosNumero2);
+		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
+		    	    		 }
+		    	    	 
+		    	    		 }        
+		    	    	 
 	    	       }
 	               }
 	             };

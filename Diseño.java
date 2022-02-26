@@ -18,7 +18,7 @@ import javax.swing.JButton;
 public class Diseño  extends JFrame{
 
 	private JPanel              panelPrincipal, panelSuperior, panelTeclado;
-	private JLabel              cerrarVentana;
+	private JLabel              cerrarVentana,  rectangulo2;
 	private JTextField          rectangulo;
 	private JButton[] arreglo=  null;
 	
@@ -73,6 +73,14 @@ public class Diseño  extends JFrame{
 		rectangulo.setFont(new Font("Lucida Fax", 160,34));
 		panelPrincipal.add(rectangulo);
 		
+		rectangulo2= new JLabel();
+		rectangulo2.setBounds(6,130,300,50);
+		rectangulo2.setBackground(new Color(155,155,155));
+		rectangulo2.setHorizontalAlignment(JLabel.LEFT);
+		rectangulo2.setForeground(Color.ORANGE);
+		rectangulo2.setOpaque(true);
+		rectangulo2.setFont(new Font("Lucida Fax", 160,30));
+		panelPrincipal.add(rectangulo2);
 	}
 	
 	public void teclado() {
@@ -110,5 +118,5 @@ public class Diseño  extends JFrame{
 	public JPanel getPanelSuperior()   {return this.panelSuperior;}
 	public JButton[] getBotones()      {return arreglo;}
 	public JTextField getRectangulo()  {return this.rectangulo;}
-	public JLabel getLrectangulo()  {return this.lRectangulo;}
+	public JLabel getRectangulo2()  {return this.rectangulo2;}
     }

@@ -12,7 +12,7 @@ public class Accionar extends Diseño{
 	
 	private int X,Y;
 	private JButton[] arreglo= null;
-	private boolean turno, operacion;
+	private boolean turno;
 	private String  capNumero = "", operaciones="";
 	private Double  mosNumero ;
 	private Double  resultado;
@@ -31,177 +31,82 @@ public class Accionar extends Diseño{
 	   
 	   ActionListener presionar= new ActionListener() {	   
 		   @Override  
-		   public void actionPerformed(ActionEvent e) {
-		     turno= true; 
-		     operacion= true;
-	    	 for(int i=0; i< arreglo.length; i++) {
-		    	 if(e.getSource() == arreglo[13]) {	   
-		    	   if(turno) {
-		    	     if(getRectangulo().getText() == ""){ 
-		    	         capNumero = "9";
-		    	       }else{
-		    	    	  capNumero += "9";
-		    	    	  turno= false;     
-		    	       }
-		    	              getRectangulo().setText(capNumero);
-		    	             }
-		                    }
-		    	              if(e.getSource() == arreglo[12]) {	   
-			    	            if(turno) {
-			    	              if(getRectangulo().getText() == ""){ 
-			    	                capNumero= "8";
-			    	                }else{
-			    	    	           capNumero += "8";
-			    	    	             turno=false;
-			    	                     }
-			    	                       getRectangulo().setText(capNumero);
-			    	                     }
-			                             }
-		    	                           if(e.getSource() == arreglo[11]) {	   
-		    			    	             if(turno) {
-		    			    	               if(getRectangulo().getText() == ""){ 
-		    			    	                 capNumero= "7";   
-		    			    	                 }else{
-		    			    	                	 capNumero+= "7";
-		    			    	    	              turno=false;
-		    			    	                      }
-		    			    	                        getRectangulo().setText(capNumero);
-		    			    	                      }
-		    			                              }
-		    	                                        if(e.getSource() == arreglo[9]) {	   
-		    	            		    	              if(turno) {
-		    	            		    	                if(getRectangulo().getText() == ""){ 
-		    	            		    	                	capNumero= "6";
-		    	            		    	                  }else{
-		    	            		    	                	  capNumero+= "6";
-		    	            		    	    	               turno=false;
-		    	            		    	                       }
-		    	            		    	                         getRectangulo().setText(capNumero);
-		    	            		    	                       }
-		    	            		                               }
-		    	                                                     if(e.getSource() == arreglo[8]) {	   
-		    	                         		    	               if(turno) {
-		    	                         		    	                 if(getRectangulo().getText() == ""){ 
-		    	                         		    	                	capNumero= "5";
-		    	                         		    	                   }else{
-		    	                         		    	                	  capNumero+= "5";
-		    	                         		    	    	                turno=false;
-		    	                         		    	                        }
-		    	                         		    	                         getRectangulo().setText(capNumero);
-		    	                         		    	                        }
-		    	                         		                                }
-		    	                                                                  if(e.getSource() == arreglo[7]) {	   
-		    	                                      		    	                if(turno) {
-		    	                                      		    	                  if(getRectangulo().getText() == ""){ 
-		    	                                      		    	                	capNumero= "4";
-		    	                                      		    	                    }else{
-		    	                                      		    	                    	capNumero+= "4";
-		    	                                      		    	    	                turno=false;
-		    	                                      		    	                        }
-		    	                                      		    	                          getRectangulo().setText(capNumero);
-		    	                                      		    	                        }
-		    	                                      		                                }
-		    	                                                                          if(e.getSource() == arreglo[5]) {	   
-		    	                                                   		    	        if(turno) {
-		    	                                                   		    	      if(getRectangulo().getText() == ""){ 
-		    	                                                   		    	    capNumero= "3";
-		    	                                                   		    	  }else{
-		    	                                                   		    		capNumero+= "3";
-		    	                                                   		       turno=false;
-		    	                                                   		       }
-		    	                                                   		     getRectangulo().setText(capNumero);	      
-		    	                                                   		       }
-		    	                                                   		       }
-		    	                                                             if(e.getSource() == arreglo[4]) {	   
-		    	                                                           if(turno) {
-		    	                                                         if(getRectangulo().getText() == ""){ 
-		    	                                                        	 capNumero= "2";
-		    	                                                     }else{
-		    	                                                    	 capNumero+= "2";
-		    	                                                 turno=false;
-		    	                                                 }
-		    	                                                 getRectangulo().setText(capNumero);        
-		    	                        		    	         }
-		    	                           	                     }
-		    	                                               if(e.getSource() == arreglo[3]) {	   
-		    	                                             if(turno) {
-		    	                          		    	   if(getRectangulo().getText() == ""){ 
-		    	                          		    		 capNumero= "1";
-		    	                                       }else{
-		    	                                    	   capNumero+= "1";
-		    	                                   turno=false;
-		    	                                   }
-		    	                          		   getRectangulo().setText(capNumero);
-		    	                                   }
-		    	                                   }
-		    	                                 if(e.getSource() == arreglo[1]) {	   
-		    	                               if(turno) {
-		    	                             if(getRectangulo().getText() == ""){ 
-		    	                            	 capNumero= "0";
-		    	                             }else{
-		    	                            	 capNumero+= "0";
-		    	                	 turno=false;
-		    	                     }
-		    	                             getRectangulo().setText(capNumero);
-		                             }
-		   		                     }
-		    	                   if(e.getSource() == arreglo[0]) {
-		    	                	   if(turno) {
-		    	      	    	 if(getRectangulo().getText() == capNumero) {
-		    	             capNumero= ",";
-		    	             
-		    	      	    	 }else {
-		    	      	    		 capNumero+=",";
-		    	      	    	 }
-		    	      	    	 turno= false;
-		    	      	    	getRectangulo().setText(capNumero);
-		    	                	   }
-		    	       }
-		    	     if(e.getSource() == arreglo[10]) {	  
-		    	          getRectangulo().setText("");
-	    	              getRectangulo2().setText("");
-	    	              capNumero="";
-	    	              turno= false;
-		    	     }
-		    	     if(e.getSource() == arreglo[17]) {
-		    	    	 if(turno) {
-		    	    		 mosNumero = Double.parseDouble(capNumero);
-		    	    		 getRectangulo2().setText(mosNumero + "/");
-		    	    		 capNumero= "";
-		    	    		 operaciones="Dividir";
-		    	    		 turno= false;
-		    	    	 }
-		    	     }
-		    	     if(e.getSource() == arreglo[16]) {
-		    	    	 if(turno) {
-		    	    		 mosNumero = Double.parseDouble(capNumero);
-		    	    		 getRectangulo2().setText(mosNumero + "X");
-		    	    		 capNumero= "";
-		    	    		 operaciones= "Multiplicar";
-		    	    		 turno= false;
-		    	    	 }
-		    	     }
-		    	     if(e.getSource() == arreglo[15]) {
-		    	    	 if(turno) {
-		    	    		 mosNumero = Double.parseDouble(capNumero);
-		    	    		 getRectangulo2().setText(mosNumero + "+");
-		    	    		 capNumero= "";
-		    	    		 operaciones="Sumar";
-		    	    		 turno= false;
-		    	    	 }
-		    	     }
-		    	     if(e.getSource() == arreglo[14]) {
-		    	    	 if(turno) {
-		    	    		 mosNumero = Double.parseDouble(capNumero);
-		    	    		 getRectangulo2().setText(mosNumero + "-");
-		    	    		 capNumero= "";
-		    	    		 operaciones="Restar";
-		    	    		 turno= false;
-		    	    	 }
-		    	     }
+		     public void actionPerformed(ActionEvent e) {
+		       turno= true; 
+	    	     for(int i=0; i< arreglo.length; i++) {
+		    	   if(e.getSource() == arreglo[i]) {
+		    	     if(turno) {	
+		    		   switch(i){ 
+		    		     case 13:  capNumero += "9";
+		    				         getRectangulo().setText(capNumero);
+		    			               break;
+		    			 case 12:        capNumero += "8"; 
+		    				               getRectangulo().setText(capNumero);
+		    			                     break;
+		    			 case 11:              capNumero += "7"; 
+		    				                   getRectangulo().setText(capNumero);
+		    			                       break;
+		    			 case 9:                 capNumero += "6"; 
+  				                                   getRectangulo().setText(capNumero);
+			                                         break;
+		    			 case 8:                       capNumero += "5"; 
+  				                                         getRectangulo().setText(capNumero);
+			                                               break;
+		    			 case 7:                           capNumero += "4"; 
+  				                                           getRectangulo().setText(capNumero);
+			                                               break;
+		    			 case 5:                         capNumero += "3"; 
+  				                                       getRectangulo().setText(capNumero);
+			                                         break;
+		    			 case 4:                   capNumero += "2"; 
+  				                                   getRectangulo().setText(capNumero);
+			                                       break;
+		    			 case 3:                 capNumero += "1"; 
+  				                               getRectangulo().setText(capNumero);
+			                                 break;
+		    			 case 1:           capNumero += "0"; 
+  				                         getRectangulo().setText(capNumero);
+			                             break; 
+		    			 case 17:  	   mosNumero = Double.parseDouble(capNumero);
+	    	    		               getRectangulo2().setText(mosNumero + "/"); 
+	    	    		             capNumero= "";
+	    	    		           operaciones="Dividir";
+	    	    	              break;
+		    			 case 16:   mosNumero = Double.parseDouble(capNumero);
+	    	    		              getRectangulo2().setText(mosNumero + "X");
+	    	    		                capNumero= "";
+	    	    		                  operaciones="Multiplicar";
+	    	    		                    break;   
+		    			 case 15: 	        mosNumero = Double.parseDouble(capNumero);
+    		                                getRectangulo2().setText(mosNumero + "+");
+  		                                    capNumero= "";
+  		                                    operaciones="Sumar";
+  		                                    break;   
+		    			 case 14:     	      mosNumero = Double.parseDouble(capNumero);
+    		                                     getRectangulo2().setText(mosNumero + "-");
+  		                                           capNumero= "";
+  		                                             operaciones="Multiplicar";
+  		                                               break;   
+		    			 case 10:  	                     mosNumero = Double.parseDouble(capNumero);
+    		                                               getRectangulo2().setText("");
+    		                                                 getRectangulo2().setText("");
+  		                                                       capNumero= "";
+  		                                                       turno= false;
+  		                                                       break;   
+		    			 case 6: //boton borrar uno por uno
+		    			 case 0:	 capNumero = ","; 
+		                             getRectangulo().setText(capNumero);
+	                                 break;
+		    			 case 2:	 
+		    			 default: break;
+		    			 }
+		    		 }
+		    	 }
 		    	     if(e.getSource() == arreglo[2]) {
 		    	    	 double mosNumero2;
-		    	    	 if(operaciones.equals("Dividir")) {	
+		    	    	 if(operaciones.equals("")) {
+		    	    		 getRectangulo2().setText(capNumero);
+		    	    	 }else if(operaciones.equals("Dividir")) {	
 		    	    		 mosNumero2 = Double.parseDouble(capNumero); 
 		    	    	  		 resultado = (mosNumero / mosNumero2);
 		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
@@ -219,9 +124,7 @@ public class Accionar extends Diseño{
 		    	    	  		 resultado = (mosNumero - mosNumero2);
 		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
 		    	    		 }
-		    	    	 
 		    	    		 }        
-		    	    	 
 	    	       }
 	               }
 	             };

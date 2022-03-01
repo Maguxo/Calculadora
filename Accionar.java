@@ -14,8 +14,8 @@ public class Accionar extends Diseño{
 	private JButton[] arreglo= null;
 	private boolean turno;
 	private String  capNumero = "", operaciones="";
-	private Double  mosNumero ;
-	private Double  resultado;
+	private Double  mosNumero, resultado;
+	
 	
 	
    public Accionar() {
@@ -37,99 +37,77 @@ public class Accionar extends Diseño{
 		    	   if(e.getSource() == arreglo[i]) {
 		    	     if(turno) {	
 		    		   switch(i){ 
-		    		     case 13:  capNumero += "9";
-		    				         getRectangulo().setText(capNumero);
-		    			               break;
-		    			 case 12:        capNumero += "8"; 
-		    				               getRectangulo().setText(capNumero);
+		    		     case 13:  capNumero += "9"; getRectangulo().setText(capNumero);
+		    			             break;
+		    			 case 12:      capNumero += "8"; getRectangulo().setText(capNumero);
+		    			                 break;
+		    			 case 11:          capNumero += "7";  getRectangulo().setText(capNumero);
 		    			                     break;
-		    			 case 11:              capNumero += "7"; 
-		    				                   getRectangulo().setText(capNumero);
-		    			                       break;
-		    			 case 9:                 capNumero += "6"; 
-  				                                   getRectangulo().setText(capNumero);
+		    			 case 9:               capNumero += "6";  getRectangulo().setText(capNumero);
+			                                     break;
+		    			 case 8:                   capNumero += "5"; getRectangulo().setText(capNumero);
 			                                         break;
-		    			 case 8:                       capNumero += "5"; 
-  				                                         getRectangulo().setText(capNumero);
-			                                               break;
-		    			 case 7:                           capNumero += "4"; 
-  				                                           getRectangulo().setText(capNumero);
-			                                               break;
-		    			 case 5:                         capNumero += "3"; 
-  				                                       getRectangulo().setText(capNumero);
-			                                         break;
-		    			 case 4:                   capNumero += "2"; 
-  				                                   getRectangulo().setText(capNumero);
-			                                       break;
-		    			 case 3:                 capNumero += "1"; 
-  				                               getRectangulo().setText(capNumero);
-			                                 break;
-		    			 case 1:           capNumero += "0"; 
-  				                         getRectangulo().setText(capNumero);
-			                             break; 
-		    			 case 17:  	   mosNumero = Double.parseDouble(capNumero);
-	    	    		               getRectangulo2().setText(mosNumero + "/"); 
-	    	    		             capNumero= "";
-	    	    		           operaciones="Dividir";
-	    	    	              break;
-		    			 case 16:   mosNumero = Double.parseDouble(capNumero);
-	    	    		              getRectangulo2().setText(mosNumero + "X");
-	    	    		                capNumero= "";
-	    	    		                  operaciones="Multiplicar";
-	    	    		                    break;   
-		    			 case 15: 	        mosNumero = Double.parseDouble(capNumero);
-    		                                getRectangulo2().setText(mosNumero + "+");
-  		                                    capNumero= "";
-  		                                    operaciones="Sumar";
-  		                                    break;   
-		    			 case 14:     	      mosNumero = Double.parseDouble(capNumero);
-    		                                     getRectangulo2().setText(mosNumero + "-");
-  		                                           capNumero= "";
-  		                                             operaciones="Multiplicar";
-  		                                               break;   
-		    			 case 10:  	                     mosNumero = Double.parseDouble(capNumero);
-    		                                               getRectangulo2().setText("");
-    		                                                 getRectangulo2().setText("");
-  		                                                       capNumero= "";
-  		                                                       turno= false;
-  		                                                       break;   
-		    			 case 6: //boton borrar uno por uno
-		    			 case 0:	 capNumero = ","; 
-		                             getRectangulo().setText(capNumero);
-	                                 break;
-		    			 case 2:	 
-		    			 default: break;
-		    			 }
-		    		 }
-		    	 }
-		    	     if(e.getSource() == arreglo[2]) {
-		    	    	 double mosNumero2;
-		    	    	 if(operaciones.equals("")) {
-		    	    		 getRectangulo2().setText(capNumero);
-		    	    	 }else if(operaciones.equals("Dividir")) {	
-		    	    		 mosNumero2 = Double.parseDouble(capNumero); 
-		    	    	  		 resultado = (mosNumero / mosNumero2);
-		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
-		    	                   
-		    	    	 }else  if(operaciones.equals("Multiplicar")) {	 	 
-		    	    			 mosNumero2 = Double.parseDouble(capNumero); 
-		    	    	  		 resultado = (mosNumero * mosNumero2);
-		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
-		    	    		 }else  if(operaciones.equals("Sumar")) {	 	 
-		    	    			 mosNumero2 = Double.parseDouble(capNumero); 
-		    	    	  		 resultado = (mosNumero + mosNumero2);
-		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
-		    	    		 }else  if(operaciones.equals("Restar")) {	 	 
-		    	    			 mosNumero2 = Double.parseDouble(capNumero); 
-		    	    	  		 resultado = (mosNumero - mosNumero2);
-		    	    	  		 getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
-		    	    		 }
-		    	    		 }        
-	    	       }
-	               }
+		    			 case 7:                       capNumero += "4"; getRectangulo().setText(capNumero);
+			                                             break;
+		    			 case 5:                           capNumero += "3"; getRectangulo().setText(capNumero);
+			                                                 break;
+		    			 case 4:                               capNumero += "2"; getRectangulo().setText(capNumero);
+			                                                 break;
+		    			 case 3:                           capNumero += "1"; getRectangulo().setText(capNumero);
+			                                             break;
+		    			 case 1:                       capNumero += "0"; getRectangulo().setText(capNumero);
+			                                         break; 
+		    			 case 17:  	               mosNumero = Double.parseDouble(capNumero);
+	    	    		                         getRectangulo2().setText(mosNumero + "/"); capNumero= "";
+	    	    		                        operaciones="Dividir";
+	    	    		                      break;
+		    			 case 16:           mosNumero = Double.parseDouble(capNumero);getRectangulo2().setText(mosNumero + "X");
+	    	    		                  capNumero= "";  operaciones="Multiplicar";
+	    	    		                break;   
+		    			 case 15: 	  mosNumero = Double.parseDouble(capNumero);  getRectangulo2().setText(mosNumero + "+");
+  		                            capNumero= "";  operaciones="Sumar";
+  		                          break;   
+		    			 case 14: mosNumero = Double.parseDouble(capNumero);  getRectangulo2().setText(mosNumero + "-");
+  		                            capNumero= "";  operaciones="Restar";
+  		                              break;   
+		    			 case 10:  	    getRectangulo().setText("");  getRectangulo2().setText("");
+  		                                  capNumero= "";
+  		                                    break;        
+		    			 case 6:              capNumero= capNumero.substring(0,capNumero.length()-1);  getRectangulo().setText(capNumero);
+		    			                        break;
+		    			 case 0:	              capNumero = "0,"; getRectangulo().setText(capNumero);
+	                                                break;
+		    			 case 2:                      double mosNumero2;
+				    	    	                        if(operaciones.equals("")){ getRectangulo2().setText(capNumero);
+				    	    	                         }else if(operaciones.equals("Dividir")){mosNumero2 = Double.parseDouble(capNumero); 
+				    	    	  		                   resultado = (mosNumero / mosNumero2);
+				    	    	  		                     getRectangulo2().setText(String.format("% .1f/% .1f= %.2f ", mosNumero,mosNumero2,resultado));
+                                                               capNumero= String.valueOf(resultado);              
+				    	    	                                 }else  if(operaciones.equals("Multiplicar")) {	 	 
+				    	    			                           mosNumero2 = Double.parseDouble(capNumero); 
+				    	    	  		                             resultado = (mosNumero * mosNumero2);
+				    	    	  		                             getRectangulo2().setText(String.format("% .1f*% .1f= %.2f ", mosNumero,mosNumero2,resultado));
+				    	    	  		                           capNumero= String.valueOf(resultado);	 
+				    	    	                                 }else  if(operaciones.equals("Sumar")) {	 	 
+				    	    			                       mosNumero2 = Double.parseDouble(capNumero); 
+				    	    	  		                     resultado = (mosNumero + mosNumero2);
+				    	    	  		                   getRectangulo2().setText(String.format("% .1f+% .1f= %.2f ", mosNumero,mosNumero2,resultado));
+				    	    	  		                 capNumero= String.valueOf(resultado);
+				    	    	                       }else  if(operaciones.equals("Restar")){mosNumero2 = Double.parseDouble(capNumero); 
+				    	    	  		             resultado = (mosNumero - mosNumero2);
+				    	    	  		           getRectangulo2().setText(String.format("% .1f-% .1f= %.2f ", mosNumero,mosNumero2,resultado));
+					    	                     capNumero = String.valueOf(resultado);      
+				    	    	                 }
+				    	    	               break;         
+		    			     default:        break;
+		    			    }
+		    		        }
+		    	            }
+	    	                }
+		                    } 
 	             };
-	   for(int i=0; i< arreglo.length; i++) {
-	   arreglo[i].addActionListener(presionar);
+	                      for(int i=0; i< arreglo.length; i++) {
+	                        arreglo[i].addActionListener(presionar);
 	   }
    }
    

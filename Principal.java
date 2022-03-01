@@ -11,7 +11,7 @@ public class Principal extends Accionar{
 		pantalla.setLayout(null);
 		pantalla.setLocation(800,20);
 		pantalla.setUndecorated(true);
-		pantalla.setSize(500,500);
+		pantalla.setSize(350,500);
 		pantalla.setVisible(true);
 		pantalla.setResizable(true);
 		pantalla.setTitle("Calculadora");

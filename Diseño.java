@@ -38,7 +38,7 @@ public class Diseño  extends JFrame{
 	
 		panelPrincipal= new JPanel();
 		panelPrincipal.setLayout(null);
-		panelPrincipal.setBounds(0,0,500,500);
+		panelPrincipal.setBounds(0,0,350,500);
 		panelPrincipal.setBackground(new Color(155,155,155));
 		this.getContentPane().add(panelPrincipal);
 		

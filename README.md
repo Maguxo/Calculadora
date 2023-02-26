@@ -1,5 +1,5 @@
-<div>
-<ima src="https://i.gifer.com/origin/60/60c05625ac6bce7f8254094ded58fa50.gif" with= 100 higth= 100>
+<div id="hola" align="center">
+<ima src="https://i.gifer.com/origin/60/60c05625ac6bce7f8254094ded58fa50.gif" width="500" height="250">
 </div>
 
 
